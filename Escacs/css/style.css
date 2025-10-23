@@ -1,0 +1,92 @@
+/* Estils generals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #e94560;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contenidor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Tauler d'escacs */
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 8px solid #8B4513;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Crear les 64 caselles amb pseudo-elements */
+.board::before {
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+}
+
+/* Patró d'escacs alternant colors */
+.board::before {
+    background: 
+        conic-gradient(
+            from 0deg at 60px 60px,
+            #f0d9b5 0deg 90deg, 
+            #b58863 90deg 180deg,
+            #f0d9b5 180deg 270deg,
+            #b58863 270deg 360deg
+        )
+        0 0 / 120px 120px;
+}
+
+/* Animació al passar el ratolí */
+.board:hover::before {
+    background: 
+        conic-gradient(
+            from 0deg at 60px 60px,
+            #e8c39e 0deg 90deg, 
+            #a87552 90deg 180deg,
+            #e8c39e 180deg 270deg,
+            #a87552 270deg 360deg
+        )
+        0 0 / 120px 120px;
+    transition: all 0.3s ease;
+}

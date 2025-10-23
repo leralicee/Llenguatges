@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-bg: #1f242d;
+    --accent-pink: #ff52bd;
+    --accent-orange: #ff985d;
+    --accent-purple: #c23a85;
+    --text-color: #fff;
+    --border-color: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+}
+
+.navbar {
+    padding: 25px 9%;
+    margin-bottom: 50px;
+}
+
+.navbar__title {
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.main {
+    min-height: calc(100vh - 140px);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    color: var(--text-color);
+    gap: 50px;
+}
+
+.profile__info {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.profile__header {
+    margin-bottom: 20px;
+}
+
+.profile__name {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.profile__title {
+    font-size: 32px;
+}
+
+.profile__highlight {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--accent-pink);
+}
+
+.profile__highlight::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    border-right: 2px solid var(--accent-pink);
+    color: var(--accent-pink);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+    0% {
+        width: 0;
+    }
+    80% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.profile__description p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin: 25px 0 10px;
+    color: var(--accent-pink);
+}
+
+.custom-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-list__item {
+    padding: 5px 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.custom-list__item:before {
+    content: "▸";
+    color: var(--accent-orange);
+    position: absolute;
+    left: 0;
+}
+
+.custom-list a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.custom-list a:hover {
+    text-decoration: underline;
+}
+
+.languages-table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.languages-table th,
+.languages-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile__footer {
+    margin: 40px 0 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid var(--accent-pink);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--accent-pink);
+    transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-pink);
+    color: var(--primary-bg);
+    box-shadow: 0 0 10px var(--accent-pink);
+}
+
+.profile__image {
+    flex-shrink: 0;
+}
+
+.image-container {
+    width: 32vw;
+    height: 32vw;
+    background: var(--accent-orange);
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 5%;
+        gap: 30px;
+    }
+    
+    .profile__info {
+        margin-right: 0;
+    }
+    
+    .profile__name {
+        font-size: 40px;
+    }
+    
+    .profile__title {
+        font-size: 24px;
+    }
+    
+    .image-container {
+        width: 60vw;
+        height: 60vw;
+        max-width: 300px;
+        max-height: 300px;
+    }
+    
+    .languages-table {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px 5%;
+        margin-bottom: 30px;
+    }
+    
+    .navbar__title {
+        font-size: 24px;
+    }
+    
+    .profile__name {
+        font-size: 32px;
+    }
+    
+    .profile__title {
+        font-size: 20px;
+    }
+    
+    .image-container {
+        width: 70vw;
+        height: 70vw;
+    }
+}

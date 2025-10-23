@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="uTF-8" ?>
+
+<horari cicle="DAM1">
+    <class category= "Itinerari personal per a l'ocupabilitat">
+        <Monday>15:00-16:00</Monday>
+        <Tuesday>20:30-21:15</Tuesday>
+        <Wednesday>20:30-21:15</Wednesday>
+        <teacher>LOURDES MONTORO DEL VALLE</teacher>
+        <mail>lourdes.montoro@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Programació">
+        <Monday>16:00-17:00</Monday>
+        <Monday>20:30-21:15</Monday>
+        <Tuesday>16:00-18:00</Tuesday>
+        <Thursday>16:00-18:00</Thursday>
+        <teacher>CARLES BONET PAPELL</teacher>
+        <mail>carles.bonet@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Base de dades">
+        <Monday>17:00-18:00</Monday>
+        <Tuesday>18:30-19:30</Tuesday>
+        <Wednesday>17:00-18:00</Wednesday>
+        <teacher>RUBÉN MARTÍNEZ CASTILLA</teacher>
+        <teacher>JESSICA SÁNCHEZ PÉREZ</teacher>
+        <mail>ruben.martinez@mataro.epiaedu.cat</mail>
+        <mail>jessica.sanchez@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Sistemes informàtics">
+        <Monday>18:30-19:30</Monday>
+        <Tuesday>19:30-20:30</Tuesday>
+        <Thursday>20:30-21:15</Thursday>
+        <teacher>BLAI REDONDO DEL VIEJO</teacher>
+        <mail>blai.redondo@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Llenguatges de marques i sistemes de gestió d'informació">
+        <Monday>19:30-20:30</Monday>
+        <Friday>18:30-19:30</Friday>
+        <teacher>RUBÉN MARTÍNEZ CASTILLA</teacher>
+        <teacher>JORDI JORDANO MASSÓ</teacher>
+        <mail>ruben.martinez@mataro.epiaedu.cat</mail>
+        <mail>jordi.jordano@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Anglès professional">
+        <Tuesday>15:00-16:00</Tuesday>
+        <Friday>17:00-18:00</Friday>
+        <teacher>LAIA CRESTEMAYER ROCA</teacher>
+        <mail>laia.crestemayer@mataro.epiaedu.cat</mail>
+        <classroom>308</classroom>
+    </class>
+
+    <class category="Entorns de desenvolupament">
+        <Wednesday>18:30-19:30</Wednesday>
+        <Thursday>19:30-20:30</Thursday>
+        <teacher>CRISTIAN GONZÁLEZ DELGADO</teacher>
+        <teacher>ISABEL BOSCH MILLASTRE</teacher>
+        <mail>cristian.gonzalez@mataro.epiaedu.cat</mail>
+        <mail>isabel.bosch@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Sostenibilitat aplicada al sistema productiu">
+        <Wednesday>19:30-20:30</Wednesday>
+        <teacher>ISABEL BOSCH MILLASTRE</teacher>
+        <mail>isabel.bosch@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Digitalització aplicada als sectors productius">
+        <Thursday>18:30-19:30</Thursday>
+        <teacher>CARLES BONET PAPELL</teacher>
+        <mail>carles.bonet@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+    <class category="Tutoria">
+        <Friday>16:00-17:00</Friday>
+        <teacher>ISABEL BOSCH MILLASTRE</teacher>
+        <mail>isabel.bosch@mataro.epiaedu.cat</mail>
+        <classroom>310</classroom>
+    </class>
+
+</horari>

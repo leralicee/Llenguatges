@@ -1,0 +1,239 @@
+{
+  "receptari": {
+    "nom": "Receptari de Cuina",
+    "autor": "Paula Romero García",
+    "data_creacio": "2025-10-03",
+    "receptes": [
+      {
+        "id": 1,
+        "nom": "Pa amb tomàquet",
+        "temps_preparacio": "10 minuts",
+        "dificultat": "Molt baixa",
+        "porcions": 4,
+        "ingredients": [
+          {
+            "nom": "Pa de pagès",
+            "quantitat": 8,
+            "unitat": "llesques"
+          },
+          {
+            "nom": "Tomàquet madur",
+            "quantitat": 2,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "All",
+            "quantitat": 2,
+            "unitat": "grans"
+          },
+          {
+            "nom": "Oli d'oliva verge extra",
+            "quantitat": 4,
+            "unitat": "cullerades"
+          },
+          {
+            "nom": "Sal",
+            "quantitat": 1,
+            "unitat": "pinsa"
+          }
+        ],
+        "procediment": "Torrar lleugerament el pa, fregar-lo amb all, aixafar el tomàquet sobre el pa, afegir oli i sal."
+      },
+      {
+        "id": 2,
+        "nom": "Escudella i carn d'olla",
+        "temps_preparacio": "3 hores",
+        "dificultat": "Mitjana",
+        "porcions": 6,
+        "ingredients": [
+          {
+            "nom": "Pilota de carn",
+            "quantitat": 6,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Os de pernil",
+            "quantitat": 1,
+            "unitat": "unitat"
+          },
+          {
+            "nom": "Botifarra negra",
+            "quantitat": 2,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Gallina",
+            "quantitat": 500,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Cigrons",
+            "quantitat": 200,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Patates",
+            "quantitat": 4,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Pastanagues",
+            "quantitat": 3,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Apus",
+            "quantitat": 2,
+            "unitat": "unitats"
+          }
+        ],
+        "procediment": "Posar tots els ingredients en una olla amb aigua, coure durant 3 hores a foc lent. Servir primer el brou amb fideus i després la carn i verdures."
+      },
+      {
+        "id": 3,
+        "nom": "Crema catalana",
+        "temps_preparacio": "45 minuts",
+        "dificultat": "Mitjana",
+        "porcions": 6,
+        "ingredients": [
+          {
+            "nom": "Llet",
+            "quantitat": 1,
+            "unitat": "litre"
+          },
+          {
+            "nom": " rovells d'ou",
+            "quantitat": 8,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Sucre",
+            "quantitat": 150,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Maizena",
+            "quantitat": 40,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Canella en branca",
+            "quantitat": 1,
+            "unitat": "unitat"
+          },
+          {
+            "nom": "Pell de llimona",
+            "quantitat": 1,
+            "unitat": "unitat"
+          },
+          {
+            "nom": "Sucre per caramel·litzar",
+            "quantitat": 100,
+            "unitat": "grams"
+          }
+        ],
+        "procediment": "Escalfar la llet amb canella i llimona, barrejar rovells amb sucre i maizena, incorporar la llet i coure fins a espessir. Caramel·litzar amb sucre just abans de servir."
+      },
+      {
+        "id": 4,
+        "nom": "Faves a la catalana",
+        "temps_preparacio": "1 hora",
+        "dificultat": "Baixa",
+        "porcions": 4,
+        "ingredients": [
+          {
+            "nom": "Faves tendres",
+            "quantitat": 800,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Botifarra",
+            "quantitat": 2,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "Ceba",
+            "quantitat": 1,
+            "unitat": "unitat gran"
+          },
+          {
+            "nom": "All",
+            "quantitat": 2,
+            "unitat": "grans"
+          },
+          {
+            "nom": "Panses",
+            "quantitat": 50,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Pinyons",
+            "quantitat": 30,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Oli d'oliva",
+            "quantitat": 4,
+            "unitat": "cullerades"
+          },
+          {
+            "nom": "Pebre negre",
+            "quantitat": 1,
+            "unitat": "pinsa"
+          }
+        ],
+        "procediment": "Sofregir ceba i all, afegir la botifarra tallada, incorporar les faves, panses i pinyons. Coure a foc lent durant 40 minuts."
+      },
+      {
+        "id": 5,
+        "nom": "Suquet de peix",
+        "temps_preparacio": "50 minuts",
+        "dificultat": "Mitjana",
+        "porcions": 4,
+        "ingredients": [
+          {
+            "nom": "Rape",
+            "quantitat": 400,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Lluç",
+            "quantitat": 400,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Gambes",
+            "quantitat": 200,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Patates",
+            "quantitat": 4,
+            "unitat": "unitats"
+          },
+          {
+            "nom": "All",
+            "quantitat": 4,
+            "unitat": "grans"
+          },
+          {
+            "nom": "Tomàquet triturat",
+            "quantitat": 200,
+            "unitat": "grams"
+          },
+          {
+            "nom": "Oli d'oliva",
+            "quantitat": 6,
+            "unitat": "cullerades"
+          },
+          {
+            "nom": "Pebreta",
+            "quantitat": 1,
+            "unitat": "culleradeta"
+          }
+        ],
+        "procediment": "Sofregir alls, afegir tomàquet i pebreta, incorporar patates i peix, afegir aigua i coure fins que les patates estiguin tendres."
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "arbre_genealogic": {
+    "familia": "Paula",
+    "persones": [
+      {
+        "id": 101,
+        "nom": "José Manuel",
+        "cognoms": "Romero Giménez",
+        "genere": "home",
+        "data_naixement": "1918-11-10",
+        "data_defuncio": "1998-05-03",
+        "relacions": {
+          "parella": 102,
+          "fills": [201]
+        }
+      },
+      {
+        "id": 102,
+        "nom": "Fina",
+        "cognoms": "Merino Rodriguez",
+        "genere": "dona",
+        "data_naixement": "1922-04-05",
+        "relacions": {
+          "parella": 101,
+          "fills": [201]
+        }
+      },
+      {
+        "id": 103,
+        "nom": "José",
+        "cognoms": "García Giménez",
+        "genere": "home",
+        "data_naixement": "1918-11-10",
+        "data_defuncio": "1998-05-03",
+        "relacions": {
+          "parella": 104,
+          "fills": [202]
+        }
+      },
+      {
+        "id": 104,
+        "nom": "Pilar",
+        "cognoms": "Navarro López",
+        "genere": "dona",
+        "data_naixement": "1938-04-05",
+        "relacions": {
+          "parella": 103,
+          "fills": [202]
+        }
+      },
+      {
+        "id": 201,
+        "nom": "Jordi",
+        "cognoms": "Romero i García",
+        "genere": "home",
+        "data_naixement": "1974-02-25",
+        "relacions": {
+          "pare": 101,
+          "mare": 102,
+          "parella": 202,
+          "fills": [301]
+        }
+      },
+      {
+        "id": 202,
+        "nom": "Maria Del Mar",
+        "cognoms": "García Navarro",
+        "genere": "dona",
+        "data_naixement": "1973-08-14",
+        "relacions": {
+          "parella": 201,
+          "fills": [301]
+        }
+      },
+      {
+        "id": 301,
+        "nom": "Paula",
+        "cognoms": "Romero García",
+        "genere": "dona",
+        "data_naixement": "2006-01-25",
+        "relacions": {
+          "pare": 201,
+          "mare": 202
+        }
+      }
+    ]
+  }
+}
