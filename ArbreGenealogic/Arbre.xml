@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arbre_genealogic familia="Paula">
+
+    <!-- EL MEU AVI PATERN -->
+    <persona id="101">
+        <nom>José Manuel</nom>
+        <cognoms>Romero Giménez</cognoms>
+        <genere>home</genere>
+        <data_naixement>1918-11-10</data_naixement>
+        <data_defuncio>1998-05-03</data_defuncio>
+        <relacions>
+            <parella ref="102"/>
+            <fills>
+                <fill ref="201"/>
+            </fills>
+        </relacions>
+    </persona>
+    
+    <!-- LA MEVA AVIA PATERNA -->
+    <persona id="102">
+        <nom>Fina</nom>
+        <cognoms>Merino Rodriguez</cognoms>
+        <genere>dona</genere>
+        <data_naixement>1922-04-05</data_naixement>
+        <relacions>
+            <parella ref="101"/>
+            <fills>
+                <fill ref="201"/>
+            </fills>
+        </relacions>
+    </persona>
+
+    <!-- EL MEU AVI MATERN -->
+    <persona id="103">
+        <nom>José</nom>
+        <cognoms>García Giménez</cognoms>
+        <genere>home</genere>
+        <data_naixement>1918-11-10</data_naixement>
+        <data_defuncio>1998-05-03</data_defuncio>
+        <relacions>
+            <parella ref="104"/>
+            <fills>
+                <filla ref="202"/>
+                <filla ref="203"/>
+            </fills>
+        </relacions>
+    </persona>
+    
+    <!-- LA MEVA AVIA MATERNA -->
+    <persona id="104">
+        <nom>Pilar</nom>
+        <cognoms>Navarro López</cognoms>
+        <genere>dona</genere>
+        <data_naixement>1938-04-05</data_naixement>
+        <relacions>
+            <parella ref="103"/>
+            <fills>
+                <filla ref="202"/>
+                <filla ref="203"/>
+            </fills>
+        </relacions>
+    </persona>
+
+    <!-- EL MEU PARE -->
+    <persona id="201">
+        <nom>Jordi</nom>
+        <cognoms>Romero García</cognoms>
+        <genere>home</genere>
+        <data_naixement>1974-02-25</data_naixement>
+        <relacions>
+            <pare ref="101"/>
+            <mare ref="102"/>
+            <parella ref="202"/>
+            <fills>
+                <fill ref="301"/>
+            </fills>
+            <sobrins>
+                <sobrina ref="302"/>
+            </sobrins>
+        </relacions>
+    </persona>
+
+    <!-- LA MEVA MARE -->
+    <persona id="202">
+        <nom>Maria Del Mar</nom>
+        <cognoms>García Navarro</cognoms>
+        <genere>dona</genere>
+        <data_naixement>1973-08-14</data_naixement>
+        <relacions>
+            <pare ref="103"/>
+            <mare ref="104"/>
+            <parella ref="201"/>
+            <fills>
+                <fill ref="301"/>
+            </fills>
+            <germans>
+                <germana ref="203"/>
+            </germans>
+            <sobrins>
+                <sobrina ref="302"/>
+            </sobrins>
+        </relacions>
+    </persona>
+
+    <!-- LA MEVA TIETA -->
+    <persona id="203">
+        <nom>Montse</nom>
+        <cognoms>García Navarro</cognoms>
+        <genere>dona</genere>
+        <data_naixement>1980-05-20</data_naixement>
+        <relacions>
+            <pare ref="103"/>
+            <mare ref="104"/>
+            <parella ref="204"/>
+            <fills>
+                <filla ref="302"/>
+            </fills>
+            <germans>
+                <germana ref="202"/>
+            </germans>
+            <sobrins>
+                <sobrina ref="301"/>
+            </sobrins>
+        </relacions>
+    </persona>
+
+    <!-- EL MEU TIET -->
+    <persona id="204">
+        <nom>Manuel</nom>
+        <cognoms>García Sánchez</cognoms>
+        <genere>home</genere>
+        <data_naixement>1978-05-20</data_naixement>
+        <relacions>
+            <parella ref="203"/>
+            <fills>
+                <filla ref="302"/>
+            </fills>
+            <sobrins>
+                <sobrina ref="301"/>
+            </sobrins>
+        </relacions>
+    </persona>
+
+    <!-- JO -->
+    <persona id="301">
+        <nom>Paula</nom>
+        <cognoms>Romero García</cognoms>
+        <genere>dona</genere>
+        <data_naixement>2006-01-25</data_naixement>
+        <relacions>
+            <pare ref="201"/>
+            <mare ref="202"/>
+            <tiets>
+                <tieta ref="203"/>
+                <tiet ref="204"/>
+            </tiets>
+            <cosins>
+                <cosina ref="302"/>
+            </cosins>
+        </relacions>
+    </persona>
+
+    <!-- LA MEVA COSINA -->
+    <persona id="302">
+        <nom>Claudia</nom>
+        <cognoms>García García</cognoms>
+        <genere>dona</genere>
+        <data_naixement>2006-03-18</data_naixement>
+        <relacions>
+            <mare ref="203"/>
+            <pare ref="204"/>
+            <tiets>
+                <tiet ref="201"/>
+                <tieta ref="202"/>
+            </tiets>
+            <cosins>
+                <cosina ref="301"/>
+            </cosins>
+        </relacions>
+    </persona>
+    
+</arbre_genealogic>
