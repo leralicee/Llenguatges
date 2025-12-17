@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salva Vides - El teu gest compta</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%);
+        }
+        .stats-gradient {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 25%, #fcd34d 50%, #fbbf24 75%, #f59e0b 100%);
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.3);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-4 shadow-md fixed w-full z-50 top-0">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="#" class="flex items-center">
+                <svg class="w-8 h-8 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="self-center text-xl font-bold whitespace-nowrap text-red-600">Salva Vides Catalunya</span>
+            </a>
+            <div class="flex items-center lg:order-2">
+                <button data-modal-target="registre-modal" data-modal-toggle="registre-modal" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors pulse-animation">
+                    Fes-te Donant
+                </button>
+                <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
+                    <span class="sr-only">Obrir menú principal</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                    <li>
+                        <a href="#problema" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-600 lg:p-0 transition-colors">El Problema</a>
+                    </li>
+                    <li>
+                        <a href="#proces" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-600 lg:p-0 transition-colors">Com Donar</a>
+                    </li>
+                    <li>
+                        <a href="#beneficis" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-600 lg:p-0 transition-colors">Mites i Veritats</a>
+                    </li>
+                    <li>
+                        <a href="#testimonis" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-600 lg:p-0 transition-colors">Testimonis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">El teu gest pot salvar <span class="underline decoration-yellow-300">fins a 3 vides</span></h1>
+                <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">Només el <span class="font-semibold">5%</span> dels donants de sang a Catalunya tenen menys de 30 anys. El futur de les reserves de sang depèn de tu.</p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                    <button data-modal-target="registre-modal" data-modal-toggle="registre-modal" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-red-600 rounded-lg bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 transition-colors shadow-custom">
+                        Fes-te Donant
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <a href="#problema" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-red-600 focus:ring-4 focus:ring-gray-300 transition-colors">
+                        Més Informació
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center text-white">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Més de <span class="font-bold">2.000</span> joves ja s'han unit aquest any</span>
+                </div>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex justify-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Jove donant sang" class="rounded-lg shadow-xl w-full max-w-md">
+                    <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg shadow-lg">
+                        <span class="font-bold">45 minuts</span> de la teva vida
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Problemàtica -->
+    <section id="problema" class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">El repte del <span class="text-red-600">relleu generacional</span></h2>
+                <p class="mt-4 text-lg text-gray-600">Les dades mostren una tendència preocupant que posa en perill les reserves de sang a Catalunya.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="p-6 bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-gray-900">Més del 40%</h3>
+                    </div>
+                    <p class="text-gray-600">dels donants actuals tenen més de 50 anys</p>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-gray-900">Només el 5%</h3>
+                    </div>
+                    <p class="text-gray-600">dels nous donants tenen menys de 30 anys</p>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-gray-900">Cada 4 minuts</h3>
+                    </div>
+                    <p class="text-gray-600">algú necessita una transfusió de sang a Catalunya</p>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-gray-900">1 donació</h3>
+                    </div>
+                    <p class="text-gray-600">pot salvar fins a 3 vides diferents</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-8 stats-gradient rounded-xl shadow-lg">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sense un relleu generacional, les reserves de sang estan en perill</h3>
+                    <p class="text-gray-800 mb-6">En els pròxims 10 anys, més de la meitat dels donants actuals arribaran a l'edat de jubilació. Si no hi ha un relleu jove, el sistema sanitari podria enfrontar-se a una greu manca de sang per a emergències, operacions i malalties cròniques.</p>
+                    <button data-modal-target="registre-modal" data-modal-toggle="registre-modal" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors">
+                        Uneix-te al canvi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Procés -->
+    <section id="proces" class="py-16 bg-white">
+        <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Com funciona la <span class="text-red-600">donació de sang</span>?</h2>
+                <p class="mt-4 text-lg text-gray-600">El procés és ràpid, segur i molt més senzill del que et penses.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 text-red-600">
+                        <span class="text-xl font-bold">1</span>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Registre</h3>
+                    <p class="text-gray-600">Presenta el DNI i omple un qüestionari sobre la teva salut i hàbits</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 text-red-600">
+                        <span class="text-xl font-bold">2</span>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Revisió mèdica</h3>
+                    <p class="text-gray-600">Un professional et farà una petita entrevista i et prendrà la tensió</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 text-red-600">
+                        <span class="text-xl font-bold">3</span>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Donació</h3>
+                    <p class="text-gray-600">La donació en si dura entre 7 i 10 minuts. És completament indolora</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 text-red-600">
+                        <span class="text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Recuperació</h3>
+                    <p class="text-gray-600">Repós durant 10-15 minuts amb una mica de menjar i beguda</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-50 rounded-xl p-8">
+                <div class="max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-6">En total, el procés dura uns <span class="text-red-600">45 minuts</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-white rounded-lg shadow-sm border border-red-100">
+                            <div class="text-2xl font-bold text-red-600">15 min</div>
+                            <div class="text-gray-600">Paperassa i entrevista</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-sm border border-red-100">
+                            <div class="text-2xl font-bold text-red-600">10 min</div>
+                            <div class="text-gray-600">Donació</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-sm border border-red-100">
+                            <div class="text-2xl font-bold text-red-600">20 min</div>
+                            <div class="text-gray-600">Recuperació</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-700 mb-4">I pots tornar a donar sang cada <span class="font-bold">3 mesos</span> si ets home, o cada <span class="font-bold">4 mesos</span> si ets dona.</p>
+                        <button data-modal-target="registre-modal" data-modal-toggle="registre-modal" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors">
+                            Vols provar-ho?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficis/Mites -->
+    <section id="beneficis" class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Mites i veritats sobre la <span class="text-red-600">donació</span></h2>
+                <p class="mt-4 text-lg text-gray-600">Resolem els dubtes més freqüents perquè puguis prendre la decisió amb tota la informació.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white text-gray-900" data-inactive-classes="text-gray-500">
+                    <h2 id="accordion-flush-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 hover:bg-gray-50 transition-colors" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                            <span>És dolorós donar sang?</span>
+                            <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                        <div class="py-5 border-b border-gray-200">
+                            <p class="mb-2 text-gray-600">Només notes una petita punxada inicial, similar a una analítica de sang rutinària. La donació en si és completament indolora. La majoria de persones descriuen la sensació com una simple molèstia inicial que desapareix ràpidament.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 id="accordion-flush-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 hover:bg-gray-50 transition-colors" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                            <span>Puc contreure alguna malaltia?</span>
+                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                        <div class="py-5 border-b border-gray-200">
+                            <p class="mb-2 text-gray-600">Absolutament no. Tot el material utilitzat és estèril i d'un sol ús. Es desprèn després de cada donació, eliminant completament el risc de contagi. La seguretat del donant és la prioritat número u en tot el procés.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 id="accordion-flush-heading-3">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 hover:bg-gray-50 transition-colors" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                            <span>Quants dies tardo a recuperar-me?</span>
+                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                        <div class="py-5 border-b border-gray-200">
+                            <p class="mb-2 text-gray-600">El cos reposa el volum de sang en 24-48 hores i els glòbuls vermells en 3-4 setmanes. Pots fer vida normal immediatament després de donar, només has d'evitar exercici físic intens durant les 12 hores següents. La majoria de persones es senten perfectament el mateix dia.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 id="accordion-flush-heading-4">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 hover:bg-gray-50 transition-colors" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
+                            <span>Quins beneficis tè per a la salut?</span>
+                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
+                        <div class="py-5 border-b border-gray-200">
+                            <p class="mb-2 text-gray-600">A part de la satisfacció personal de salvar vides, la donació regular ajuda a mantenir els nivells de ferro saludables, redueix el risc d'atacs cardíacs i accidents cerebrovasculars, i et permet fer-te revisions mèdiques periòdiques gratuïtes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonis/Dades -->
+    <section id="testimonis" class="py-16 bg-white">
+        <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Ells ja ho han fet. <span class="text-red-600">I tu?</span></h2>
+                <p class="mt-4 text-lg text-gray-600">Descobreix les experiències de joves com tu que ja s'han sumat a la causa.</p>
+            </div>
+
+            <div id="default-carousel" class="relative w-full max-w-4xl mx-auto" data-carousel="slide">
+                <div class="relative h-80 overflow-hidden rounded-lg md:h-96">
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                            <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-red-100">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Laura" width="48" height="48">
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-bold text-gray-900">Laura, 24</h3>
+                                        <p class="text-gray-600">Estudiant de Medicina</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">"Vaig començar a donar sang fa dos anys i ja he fet 4 donacions. És increïble pensar que un gest tan senzill pot tenir un impacte tan gran. A més, rebs una revisió mèdica completa cada vegada. És un win-win!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                            <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-red-100">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Marc" width="48" height="48">
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-bold text-gray-900">Marc, 29</h3>
+                                        <p class="text-gray-600">Enginyer informàtic</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">"Sempre vaig pensar que no tenia temps, però quan vaig saber que només es necessiten 45 minuts cada 3 mesos, no vaig poder posar més excuses. Ara ho faig regularment i fins i tot he convençut alguns companys de feina perquè s'uneixin."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                            <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-red-100">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Carla" width="48" height="48">
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-bold text-gray-900">Carla, 26</h3>
+                                        <p class="text-gray-600">Dissenyadora gràfica</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">"La primera vegada vaig anar amb una amiga per donar-nos suport mútuament. Va ser tan fàcil i gratificant que ara ho fem regularment. És una manera molt pràctica de contribuir a la societat sense que et suposi gaire esforç."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                </div>
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Anterior</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Següent</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Final -->
+    <section class="cta-gradient py-16">
+        <div class="max-w-screen-xl px-4 mx-auto text-center lg:px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-white">Uneix-te a la nova generació de donants</h2>
+                <p class="mb-8 text-lg font-light text-white sm:text-xl">Només et calen 45 minuts cada 3 mesos per salvar fins a 3 vides. El teu gest compta.</p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                    <button data-modal-target="registre-modal" data-modal-toggle="registre-modal" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-red-600 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 transition-colors shadow-custom">
+                        Fes-te Donant Ara
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <a href="#problema" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-red-600 transition-colors">
+                        Més Informació
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="self-center text-xl font-bold whitespace-nowrap text-white">Salva Vides Catalunya</span>
+                    </a>
+                    <p class="max-w-xs mb-4 text-gray-400">Una iniciativa per garantir el relleu generacional dels donants de sang a Catalunya.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 lg:col-span-2">
+                    <div>
+                        <h3 class="mb-4 text-sm font-semibold text-white uppercase">Enllaços ràpids</h3>
+                        <ul class="text-gray-400">
+                            <li class="mb-2">
+                                <a href="#problema" class="hover:text-white transition-colors">El Problema</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#proces" class="hover:text-white transition-colors">Com Donar</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#beneficis" class="hover:text-white transition-colors">Mites i Veritats</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#testimonis" class="hover:text-white transition-colors">Testimonis</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="mb-4 text-sm font-semibold text-white uppercase">Contacte</h3>
+                        <ul class="text-gray-400">
+                            <li class="mb-2">
+                                <span class="hover:text-white">Telèfon: 93 123 45 67</span>
+                            </li>
+                            <li class="mb-2">
+                                <span class="hover:text-white">Email: info@salvavides.cat</span>
+                            </li>
+                            <li class="mb-2">
+                                <span class="hover:text-white">Horari: Dilluns a Divendres de 9h a 20h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-700">
+            <div class="text-center text-gray-400">
+                <span>© 2023 Salva Vides Catalunya. Tots els drets reservats.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de registre -->
+    <div id="registre-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow">
+                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="registre-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Tancar modal</span>
+                </button>
+                <div class="px-6 py-6 lg:px-8">
+                    <h3 class="mb-4 text-xl font-medium text-gray-900">Sol·licita informació per ser donant</h3>
+                    <form class="space-y-6" action="#" method="POST" id="registre-form">
+                        <div>
+                            <label for="nom" class="block mb-2 text-sm font-medium text-gray-900">Nom complet</label>
+                            <input type="text" name="nom" id="nom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" placeholder="El teu nom" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">El teu email</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" placeholder="nom@exemple.cat" required>
+                        </div>
+                        <div>
+                            <label for="telefon" class="block mb-2 text-sm font-medium text-gray-900">Telèfon</label>
+                            <input type="tel" name="telefon" id="telefon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" placeholder="+34 123 456 789" required>
+                        </div>
+                        <div>
+                            <label for="edat" class="block mb-2 text-sm font-medium text-gray-900">Edat</label>
+                            <input type="number" name="edat" id="edat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" placeholder="18" min="18" max="65" required>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-300" required>
+                                </div>
+                                <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Accepto les <a href="#" class="text-red-600 hover:underline">condicions</a></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Enviar sol·licitud</button>
+                        <div class="text-sm font-medium text-gray-500">
+                            Ja ets donant? <a href="#" class="text-red-600 hover:underline">Accedeix al teu compte</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    
+</body>
+</html>
