@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador Torneig</title>
-
+    <title>Generador Campionat</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Flowbite CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body class="bg-gray-100 min-h-screen">
-
+    
     <!-- Header principal -->
     <header class="bg-blue-600 text-white py-6 shadow-lg">
         <div class="container mx-auto px-4">
@@ -24,28 +23,174 @@
 
     <!-- Contenidor principal -->
     <main class="container mx-auto px-4 py-8">
+        
+        <!-- Seccio 1: Configuracio Inicial -->
+        <section id="seccion-config" class="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
+            
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Configuració del Torneig</h2>
+            
+            <!-- Nombre d'equips -->
+            <div class="mb-6">
+                <label for="num-equipos" class="block mb-2 text-sm font-medium text-gray-700">
+                    Nombre d'equips
+                </label>
+                <input 
+                    type="number" 
+                    id="num-equipos" 
+                    min="2" 
+                    placeholder="Introdueix el nombre d'equips"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                >
+                <!-- Missatge d'avis de byes -->
+                <div id="aviso-byes" class="hidden mt-2 p-3 text-sm text-amber-800 bg-amber-50 rounded-lg border border-amber-200">
+                    <!-- Missatge dinàmic -->
+                </div>
+            </div>
 
-        <!-- Secció 1: Configuració Inicial -->
-        <section id="seccion-config" class="bg-white rounded-lg shadow-md p-6">
+            <!-- Radio buttons: Lletres o Nombres -->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-700">
+                    Tipus de noms d'equips
+                </label>
+                <div class="flex gap-4">
+                    <div class="flex items-center">
+                        <input 
+                            id="tipo-numeros" 
+                            type="radio" 
+                            name="tipo-nombres" 
+                            value="numeros" 
+                            checked
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+                        >
+                        <label for="tipo-numeros" class="ml-2 text-sm font-medium text-gray-700">
+                            Per números (Equip 1, Equip 2...)
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input 
+                            id="tipo-letras" 
+                            type="radio" 
+                            name="tipo-nombres" 
+                            value="letras"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+                        >
+                        <label for="tipo-letras" class="ml-2 text-sm font-medium text-gray-700">
+                            Per lletres (Equip A, Equip B...)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Radio buttons: Mode de registre de resultats -->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-700">
+                    Mode de registre de resultats
+                </label>
+                <div class="flex gap-4">
+                    <div class="flex items-center">
+                        <input 
+                            id="modo-marcador" 
+                            type="radio" 
+                            name="modo-resultado" 
+                            value="marcador" 
+                            checked
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+                        >
+                        <label for="modo-marcador" class="ml-2 text-sm font-medium text-gray-700">
+                            Introduir marcador
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input 
+                            id="modo-seleccion" 
+                            type="radio" 
+                            name="modo-resultado" 
+                            value="seleccion"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+                        >
+                        <label for="modo-seleccion" class="ml-2 text-sm font-medium text-gray-700">
+                            Seleccionar guanyador
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botó Continuar -->
+            <div class="flex justify-end">
+                <button 
+                    id="btn-continuar" 
+                    type="button"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+                >
+                    Continuar
+                </button>
+            </div>
+
         </section>
 
-        <!-- Secció 2: Nombre d'Equips -->
+        <!-- Secció 2: Noms d'Equips -->
         <section id="seccion-nombres" class="hidden bg-white rounded-lg shadow-md p-6">
+            
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Noms dels equips</h2>
+            
+            <!-- Missatge informatiu -->
+            <div id="mensaje-info" class="mb-4 p-4 text-sm text-blue-800 bg-blue-50 rounded-lg border border-blue-200">
+                <!-- Missatge dinàmic amb JS -->
+            </div>
+            
+            <!-- Contenidor per al grid de inputs -->
+            <div id="grid-equipos" class="mb-6">
+                <!-- Els inputs es generaràn amb JavaScript -->
+            </div>
+            
+            <!-- Botó Generar Torneig -->
+            <div class="flex justify-end gap-3">
+                <button 
+                    id="btn-volver-config" 
+                    type="button"
+                    class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+                >
+                    Tornar
+                </button>
+                <button 
+                    id="btn-generar-torneo" 
+                    type="button"
+                    class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+                >
+                    GENERAR TORNEIG
+                </button>
+            </div>
+
         </section>
 
         <!-- Secció 3: Bracket del Torneig -->
         <section id="seccion-torneo" class="hidden bg-white rounded-lg shadow-md p-6">
+            
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Torneig Eliminatori</h2>
+                <button 
+                    id="btn-reiniciar" 
+                    type="button"
+                    class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 focus:outline-none"
+                >
+                    Reiniciar
+                </button>
+            </div>
+            
+            <!-- Contenidor principal del bracket -->
+            <div id="bracket-container" class="overflow-x-auto pb-4">
+                <!-- El bracket es generarà amb JavaScript -->
+            </div>
+
         </section>
 
     </main>
 
     <!-- Flowbite JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
-
-    <script>
-        // script a script.js
-    </script>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>
